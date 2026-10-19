@@ -42,6 +42,38 @@ class CuentaTest {
 		assertEquals(-5.0, c.getSaldo());
 	}
 	
+	@Test
+	void test0014() {
+		Cuenta cuenta1 = new Cuenta(50.0);
+		cuenta1.setNumero("12345");
+		Cuenta cuenta2 = new Cuenta(0.0);
+		cuenta2.setNumero("67890");
+		
+	    cuenta1.retirar(200.0);
+	    assertEquals(-150.0, cuenta1.getSaldo());
+
+	    cuenta2.retirar(350.0);
+	    assertEquals(-350.0, cuenta2.getSaldo());
+
+	    cuenta1.ingreso(100.0);
+	    assertEquals(-50.0, cuenta1.getSaldo());
+
+	    cuenta2.retirar(200.0);
+	    assertEquals(-350.0, cuenta2.getSaldo());
+
+	    cuenta2.retirar(150.0);
+	    assertEquals(-500.0, cuenta2.getSaldo());
+
+	    cuenta1.retirar(200.0);
+	    assertEquals(-250.0, cuenta1.getSaldo());
+
+	    cuenta2.ingreso(50.0);
+	    assertEquals(-450.0, cuenta2.getSaldo());
+
+	    cuenta2.retirar(100.0);
+	    assertEquals(-450.0, cuenta2.getSaldo());
+		
+	}
 	
 
 }
