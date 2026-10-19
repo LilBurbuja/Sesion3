@@ -58,14 +58,8 @@ class CuentaTest {
 	    cuenta1.ingreso(100.0);
 	    assertEquals(-50.0, cuenta1.getSaldo());
 
-	    assertThrows(IllegalArgumentException.class, () -> {
-	        if (cuenta2.getSaldo() - 200.0 < -500.0) {
-	            throw new IllegalArgumentException("Fondos insuficientes (saldo " 
-	            		+ cuenta2.getSaldo() + ") en la cuenta " + cuenta2.getNumero() 
-	            		+ " para el reintegro de 200");
-	            }
-	        }
-	    );
+	    assertThrows(IllegalArgumentException.class, 
+	    		() -> cuenta2.retirar(200.0));
 	    assertEquals(-350.0, cuenta2.getSaldo());
 
 	    cuenta2.retirar(150.0);
@@ -76,15 +70,9 @@ class CuentaTest {
 
 	    cuenta2.ingreso(50.0);
 	    assertEquals(-450.0, cuenta2.getSaldo());
-	    
-	    assertThrows(IllegalArgumentException.class, () -> {
-	        if (cuenta2.getSaldo() - 100.0 < -500.0) {
-	        	throw new IllegalArgumentException("Fondos insuficientes (saldo " 
-	            		+ cuenta2.getSaldo() + ") en la cuenta " + cuenta2.getNumero() 
-	            		+ " para el reintegro de 100");
-	            }
-	        }
-	    );
+
+	    assertThrows(IllegalArgumentException.class, 
+	    		() -> cuenta2.retirar(100.0));
 	    assertEquals(-450.0, cuenta2.getSaldo());
 		
 	}

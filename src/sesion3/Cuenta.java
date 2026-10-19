@@ -29,7 +29,13 @@ public class Cuenta {
 		this.saldo = saldo;
 	}
 	public void retirar(double d) {
-		this.saldo -= d;
+		if(this.saldo - d < -500.0) {
+			throw new IllegalArgumentException("Fondos insuficientes (saldo " 
+            		+ this.saldo + ") en la cuenta " + this.numero
+            		+ " para el reintegro de " + d);
+		}
+		else this.saldo -= d;
+		
 		
 	}
 	public void ingreso(double d) {
