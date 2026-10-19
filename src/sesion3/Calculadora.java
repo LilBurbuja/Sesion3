@@ -4,22 +4,22 @@ public class Calculadora {
 
 	public static Integer suma(int i, int j) {
 		// TODO Auto-generated method stub
-		return 5;
+		return i+j;
 	}
 
 	public static Integer resta(int i, int j) {
 		// TODO Auto-generated method stub
-		return 5;
+		return i-j;
 	}
 
 	public static Integer mult(int i, int j) {
 		// TODO Auto-generated method stub
-		return 6;
+		return i*j;
 	}
 
 	public static Integer div(int i, int j) {
 		// TODO Auto-generated method stub
-		return 5;
+		return i/j;
 	}
 
 }
