@@ -23,17 +23,17 @@ public class Cuenta {
 		this.titular = titular;
 	}
 	public Double getSaldo() {
-		return 5.0;
+		return saldo;
 	}
 	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
 	public void retirar(double d) {
-		this.saldo += d;
+		this.saldo -= d;
 		
 	}
 	public void ingreso(double d) {
-		this.saldo -= d;
+		this.saldo += d;
 	}
 	
 }
